@@ -1,0 +1,13 @@
+{% extends "dashboard/_base.html" %}
+
+{% block content %}
+  <div class="fs-1 fw-bold mb-6">
+    Informações dos Sensores
+  </div>
+  <div id="charts-container"
+       hx-get="{% url 'dashboard:index' %}"
+       hx-trigger="load, every 5s"
+       hx-swap="innerHTML">
+    {% include "dashboard/partials/charts.html" %}
+  </div>
+{% endblock content %}
